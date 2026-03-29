@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'INCIDENTS - LE SILENCE EST UNE PROTECTION</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --text: #ffffff;
+            --accent: #0047ab; /* Bleu institutionnel froid */
+            --danger: #ff0000;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        header {
+            border-bottom: 2px solid var(--text);
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin: 0;
+        }
+
+        .irony-box {
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 40px 0;
+            background: rgba(0, 71, 171, 0.1);
+        }
+
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px,0) skew(0deg); }
+            4%, 60% { transform: translate(-2px,0) skew(0deg); }
+            62% { transform: translate(0,0) skew(5deg); }
+        }
+
+        .btn-help {
+            display: block;
+            width: 100%;
+            background: var(--text);
+            color: var(--bg);
+            text-align: center;
+            padding: 30px;
+            font-weight: bold;
+            font-size: 2rem;
+            text-decoration: none;
+            margin-top: 50px;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-help:hover {
+            background: var(--danger);
+            color: white;
+            transform: scale(0.98);
+        }
+
+        #emergency-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .numbers {
+            font-size: 5rem;
+            font-weight: 900;
+        }
+
+        .small-print {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 20px;
+            max-width: 500px;
+        }
+
+        .society-section {
+            margin-top: 100px;
+            text-align: right;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        .society-section h2 {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>PROJET : [SILENCE_ADMINISTRATIF]</h1>
+        <p>Édité par : Léopold & Noha (Anciens Incapables Majeurs)</p>
+    </header>
+
+    <section>
+        <p>Félicitations. Vous avez trouvé la plateforme qui **ne peut pas** vous aider.</p>
+        
+        <div class="irony-box">
+            <p>La loi française est une merveille. Elle vous protège tellement que si vous parlez ici, nous devenons des délinquants. Pour votre sécurité, nous avons décidé de ne pas vous écouter.</p>
+            <p>On appelle ça la "protection de l'enfance". C'est l'art de construire un mur de béton juridique et de peindre des cœurs dessus.</p>
+        </div>
+
+        <p>L'administration préfère une vie brisée en silence qu'une vérité qui fait du bruit dans un dossier bien rangé.</p>
+    </section>
+
+    <section class="society-section">
+        <h2>Et vous ?</h2>
+        <p>Vous qui croyez que le 119 est une baguette magique.</p>
+        <p>Vous qui dormez bien parce que "l'État s'en occupe".</p>
+        <p>Sommes-nous les seuls à voir l'armure qui étouffe ?</p>
+    </section>
+
+    <button class="btn-help" onclick="showHelp()">SIGNALER L'INCIDENT</button>
+</div>
+
+<div id="emergency-overlay">
+    <div>
+        <div class="glitch" style="font-size: 1.2rem; color: var(--danger);">-- ÉCHEC DE TRANSMISSION LOCALE --</div>
+        <div class="numbers">119</div>
+        <div style="margin: 20px 0; opacity: 0.5;">OU</div>
+        <div class="numbers" style="color: var(--accent);">911*</div>
+        
+        <div class="small-print">
+            * Standard international UIT-2018. Le monde entier sait que vous appelez. 
+            Mais votre institution n'est pas encore connectée au monde. 
+            Le 911 fonctionne partout, sauf dans le bureau de votre éducateur de nuit.
+        </div>
+        
+        <button onclick="hideHelp()" style="margin-top: 40px; background: none; border: 1px solid white; color: white; padding: 10px 20px; cursor: pointer;">Retour au silence</button>
+    </div>
+</div>
+
+<script>
+    function showHelp() {
+        document.getElementById('emergency-overlay').style.display = 'flex';
+    }
+    function hideHelp() {
+        document.getElementById('emergency-overlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
